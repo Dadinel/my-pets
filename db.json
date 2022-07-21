@@ -1,0 +1,57 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "name": "Luna",
+      "breed": "Shitzu",
+      "color": "Preto",
+      "type": "Cachorro",
+      "ownerId": 1
+    },
+    {
+      "id": 2,
+      "name": "Thor",
+      "breed": "Viralata",
+      "color": "Preto",
+      "type": "Cachorro",
+      "ownerId": 2
+    },
+    {
+      "id": 3,
+      "name": "Nick",
+      "breed": "Siamês",
+      "color": "Caramelo",
+      "type": "Gato",
+      "ownerId": 3
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Carolina Lima",
+      "rg": "123456",
+      "cpf": "123456",
+      "email": "carolina_lima@hotmail.com",
+      "tel1": "123456",
+      "tel2": ""
+    },
+    {
+      "id": 2,
+      "name": "José Alberto Cruz",
+      "rg": "123456",
+      "cpf": "123456",
+      "email": "zezinho@gmail.com",
+      "tel1": "123456",
+      "tel2": ""
+    },
+    {
+      "id": 3,
+      "name": "Rosana Santana",
+      "rg": "123456",
+      "cpf": "123456",
+      "email": "ro.santana@hotmail.com",
+      "tel1": "123456",
+      "tel2": ""
+    }
+  ]
+}
