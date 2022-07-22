@@ -17,7 +17,8 @@ export class AppComponent {
   }
   readonly menus: Array<PoMenuItem> = [
     { label: 'Home', action: this.onClick.bind(this) },
-    { label: 'Donos de Pet', action: this.goToOwners.bind(this) }
+    { label: 'Donos de Pet', action: this.goToOwners.bind(this) },
+    { label: 'Pets', action: () => alert('Pets ainda não disponivel') }
   ];
 
   private onClick() {

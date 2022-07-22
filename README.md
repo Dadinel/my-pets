@@ -28,6 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Commands
 
+```
 npm install -g @angular/cli
 ng new my-pets
 cd my-pets
@@ -39,3 +40,7 @@ json-server db.json
 cd src\app\features
 ng g component owners
 cd ..\..\..
+cd src\app\features\owners\shared\services
+ng g service owners
+cd ..\..\..\..\..\..
+```

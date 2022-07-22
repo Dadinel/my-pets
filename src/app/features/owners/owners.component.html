@@ -1,5 +1,37 @@
 <po-page-dynamic-search
     p-title="Donos de Pet"
+    [p-actions]="actions"
 >
-    Entrei em owners
+    <div class="po-row" *ngIf="owners">
+        <!-- <div *ngFor="let owner of owners">
+            {{owner.name}}
+        </div> -->
+
+        <po-widget
+            *ngFor="let owner of owners"
+            [p-height]="140"
+            class="po-xl-3 po-lg-3 po-md-3 po-sm-12 po-mt-2"
+            p-primary-label="Alterar"
+            p-secondary-label="Excluir"
+        >
+            <po-info
+                p-label="Código"
+                [p-value]="owner.id"
+                [p-orientation]="orientation.Horizontal"
+            >
+            </po-info>
+
+            <po-info
+                p-label="Nome"
+                [p-value]="owner.name"
+                [p-orientation]="orientation.Horizontal"            
+            >
+            </po-info>
+        </po-widget>
+
+        <!-- <po-table
+            [p-items]="owners"
+        >
+        </po-table> -->
+    </div>
 </po-page-dynamic-search>

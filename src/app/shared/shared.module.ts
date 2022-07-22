@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PoModule } from '@po-ui/ng-components';
 
@@ -6,10 +7,12 @@ import { PoModule } from '@po-ui/ng-components';
 
   ],
   imports: [
-    PoModule
+    PoModule,
+    CommonModule
   ],
   exports: [
-    PoModule
+    PoModule,
+    CommonModule
   ]
 })
 export class SharedModule { }
