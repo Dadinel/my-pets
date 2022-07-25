@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { OwnersService } from './shared/services/owners.service';
 import { Owner } from './shared/interfaces/owner.interface';
 import { PoInfoOrientation, PoModalAction, PoModalComponent, PoPageAction } from '@po-ui/ng-components';
+import { OwnersFormComponent } from './owners-form/owners-form.component';
 
 @Component({
   selector: 'mp-owners',
@@ -15,6 +16,9 @@ export class OwnersComponent implements OnInit {
   actions: Array<PoPageAction>;
   modalActions: Array<PoModalAction>;
   onwerFormToSave: Owner;
+  @ViewChild(OwnersFormComponent, { static: true}) mpOwnersForm: OwnersFormComponent;
+  updatingOwner: boolean;
+  modalTitle: string;
 
   constructor(
     private ownersService: OwnersService
@@ -41,7 +45,7 @@ export class OwnersComponent implements OnInit {
 
   getActions(): Array<PoPageAction> {
     return [
-      { label: 'Incluir', action: () => this.openModal() }
+      { label: 'Incluir', action: () => this.openModalToInsert() }
       // { label: 'Incluir', action: this.entrei.bind(this) }
     ];
   }
@@ -63,19 +67,41 @@ export class OwnersComponent implements OnInit {
     );
   }
 
+  openModalToInsert(): void {
+    this.updatingOwner = false;
+    this.modalTitle = 'Incluir';
+    this.openModal();
+  }
+
+  openModalToUpdate(owner: Owner): void {
+    this.updatingOwner = true;
+    this.mpOwnersForm.buildFormToUpdate(owner);
+    this.modalTitle = 'Alterar';
+    this.openModal();
+  }
+
   openModal(): void {
     this.ownerFormModal.open();
   }
 
   closeModal(): void {
     this.ownerFormModal.close();
+    this.mpOwnersForm.clearForm();
   }
 
   getModalActions(): Array<PoModalAction> {
     return [
-      {label: 'Salvar', action: () => this.postOwner() },
+      {label: 'Salvar', action: () => this.saveOwner() },
       {label: 'Cancelar', action: () => this.closeModal() }
     ];
+  }
+
+  saveOwner(): void {
+    if (this.updatingOwner) {
+      this.putOwner();
+    } else {
+      this.postOwner();
+    }
   }
 
   postOwner(): void {
@@ -89,7 +115,7 @@ export class OwnersComponent implements OnInit {
     );
   }
 
-  putOwner(owner: Owner): void {
+  putOwner(): void {    
     this.ownersService.put(this.onwerFormToSave).subscribe(
       {
         next: () => {
