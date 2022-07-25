@@ -63,10 +63,6 @@ export class OwnersComponent implements OnInit {
     );
   }
 
-  updateOwner(id: string): void {
-    alert(`Atualizar owner ${id}`);
-  }
-
   openModal(): void {
     this.ownerFormModal.open();
   }
@@ -78,7 +74,7 @@ export class OwnersComponent implements OnInit {
   getModalActions(): Array<PoModalAction> {
     return [
       {label: 'Salvar', action: () => this.postOwner() },
-      {label: 'Cancelar', action: () => this.entrei() }
+      {label: 'Cancelar', action: () => this.closeModal() }
     ];
   }
 
@@ -93,7 +89,7 @@ export class OwnersComponent implements OnInit {
     );
   }
 
-  putOwner(): void {
+  putOwner(owner: Owner): void {
     this.ownersService.put(this.onwerFormToSave).subscribe(
       {
         next: () => {
