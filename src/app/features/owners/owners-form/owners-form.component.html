@@ -1,0 +1,58 @@
+<form [formGroup]="ownerForm">
+    <po-divider p-label="Informações pessoais"></po-divider>
+
+    <div class="po-row po-mb-2">
+        <po-input 
+            class="po-xl-2 po-lg-2 po-md-2 po-sm-12 po-mb-sm-2"
+            p-label="Id"
+            formControlName="id"
+        >
+        </po-input>
+
+        <po-input 
+            class="po-xl-4 po-lg-4 po-md-4 po-sm-12 po-mb-sm-2"
+            p-label="Nome"
+            formControlName="name"
+        >
+        </po-input>
+
+        <po-input 
+            class="po-xl-3 po-lg-3 po-md-3 po-sm-12 po-mb-sm-2"
+            p-label="RG"
+            formControlName="rg"
+        >
+        </po-input>
+
+        <po-input 
+            class="po-xl-3 po-lg-3 po-md-3 po-sm-12 po-mb-sm-2"
+            p-label="CPF"
+            formControlName="cpf"
+        >
+        </po-input>
+    </div>
+
+    <po-divider p-label="Informações pra contato"></po-divider>
+
+    <div class="po-row">
+        <po-input 
+            class="po-xl-6 po-lg-6 po-md-6 po-sm-12 po-mb-sm-2"
+            p-label="E-Mail"
+            formControlName="email"
+        >
+        </po-input>
+
+        <po-input 
+            class="po-xl-3 po-lg-3 po-md-3 po-sm-12 po-mb-sm-2"
+            p-label="Telefone 1"
+            formControlName="tel1"
+        >
+        </po-input>
+
+        <po-input 
+            class="po-xl-3 po-lg-3 po-md-3 po-sm-12 po-mb-sm-2"
+            p-label="Telefone 2"
+            formControlName="tel2"
+        >
+        </po-input>
+    </div>
+</form>

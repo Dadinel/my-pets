@@ -43,4 +43,7 @@ cd ..\..\..
 cd src\app\features\owners\shared\services
 ng g service owners
 cd ..\..\..\..\..\..
+cd src\app\features\owners
+ng g component owners-form
+cd ..\..\..\..
 ```

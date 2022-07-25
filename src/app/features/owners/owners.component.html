@@ -13,6 +13,8 @@
             class="po-xl-3 po-lg-3 po-md-3 po-sm-12 po-mt-2"
             p-primary-label="Alterar"
             p-secondary-label="Excluir"
+            (p-secondary-action)="deleteOwner(owner.id)"
+            (p-primary-action)="updateOwner(owner.id)"
         >
             <po-info
                 p-label="Código"
@@ -35,3 +37,16 @@
         </po-table> -->
     </div>
 </po-page-dynamic-search>
+
+<po-modal
+    #ownerFormModal
+    p-title="Incluir"
+    [p-primary-action]="modalActions[0]"
+    [p-secondary-action]="modalActions[1]"
+>
+    <mp-owners-form
+        (sendOwnerFormToSave)="receiverForm($event)"
+    >
+
+    </mp-owners-form>
+</po-modal>
