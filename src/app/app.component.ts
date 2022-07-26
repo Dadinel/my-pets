@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { PoMenuItem } from '@po-ui/ng-components';
 
 @Component({
@@ -18,7 +17,7 @@ export class AppComponent {
   readonly menus: Array<PoMenuItem> = [
     { label: 'Home', action: this.onClick.bind(this) },
     { label: 'Donos de Pet', action: this.goToOwners.bind(this) },
-    { label: 'Pets', action: () => alert('Pets ainda não disponivel') }
+    { label: 'Pets', action: () => this.goToPets() }
   ];
 
   private onClick() {
@@ -27,6 +26,10 @@ export class AppComponent {
 
   goToOwners(): void {
     this.router.navigate(['owners']);
+  }
+
+  goToPets(): void {
+    this.router.navigate(['pets']);
   }
 
 }
