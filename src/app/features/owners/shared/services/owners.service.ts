@@ -30,4 +30,8 @@ export class OwnersService {
   put(body: Owner): Observable<Owner> {
     return this.httpClient.put<Owner>(`${URL}/${body.id}`, body);
   }
+
+  getOne(id: string): Observable<Owner> {
+    return this.httpClient.get<any>(`${URL}/${id}`);
+  }
 }

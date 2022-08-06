@@ -11,18 +11,18 @@
     {
       "id": 2,
       "name": "Thor",
-      "breed": "Viralata",
       "color": "Preto",
+      "breed": "Viralatas",
       "type": "Cachorro",
       "ownerId": 2
     },
     {
-      "id": 3,
-      "name": "Nick",
-      "breed": "Siamês",
-      "color": "Caramelo",
-      "type": "Gato",
-      "ownerId": 3
+      "id": "3",
+      "name": "Bruce",
+      "color": "Mesclado",
+      "breed": "Shih Tzu",
+      "type": "Cachorro",
+      "ownerId": "4"
     }
   ],
   "owners": [
@@ -45,13 +45,22 @@
       "tel2": ""
     },
     {
-      "id": 3,
-      "name": "Rosana Santana",
-      "rg": "123456",
-      "cpf": "123456",
-      "email": "ro.santana@hotmail.com",
-      "tel1": "123456",
-      "tel2": ""
+      "id": "3",
+      "name": "Teste",
+      "cpf": "666",
+      "rg": "Xisto",
+      "email": "xpto@asdasd.com",
+      "tel1": "1234",
+      "tel2": "5678"
+    },
+    {
+      "id": "4",
+      "name": "Daniel",
+      "cpf": "Cpf",
+      "rg": "Rg",
+      "email": "dadinel@totvs.com",
+      "tel1": "666",
+      "tel2": "tapa na oreia"
     }
   ]
 }

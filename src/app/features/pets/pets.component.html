@@ -1,10 +1,33 @@
 <po-page-dynamic-search
     p-title="Pets"
-    [p-actions]="actions"
+    [p-actions]="pageActions"
 >
 
     <po-table
         [p-items]="pets"
+        [p-actions]="tableActions"
+        [p-columns]="columns"
     >
     </po-table>
 </po-page-dynamic-search>
+
+<po-modal #deleteFormModal p-title="Excluir"
+    [p-primary-action]="deletePetConfirmation"
+    [p-secondary-action]="deletePetCancel"
+>
+    Tem certeza que deseja excluir o Pet?
+</po-modal>
+
+<po-modal
+    #petFormModal
+    [p-title]="titleModalPet"
+    [p-primary-action]="confirmPetModal"
+    [p-secondary-action]="cancelPetModal"
+>
+    <mp-pets-form
+        #petSaveForm
+        (sendPetFormToSave)="receivePet($event)"
+    >
+    </mp-pets-form>
+</po-modal>
+

@@ -15,14 +15,10 @@ export class AppComponent {
 
   }
   readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', action: this.onClick.bind(this) },
+    { label: 'Home', action: this.goToHome.bind(this) },
     { label: 'Donos de Pet', action: this.goToOwners.bind(this) },
     { label: 'Pets', action: () => this.goToPets() }
   ];
-
-  private onClick() {
-    alert('Clicked in menu item')
-  }
 
   goToOwners(): void {
     this.router.navigate(['owners']);
@@ -30,6 +26,10 @@ export class AppComponent {
 
   goToPets(): void {
     this.router.navigate(['pets']);
+  }
+
+  goToHome(): void {
+    this.router.navigate(['home']);
   }
 
 }
